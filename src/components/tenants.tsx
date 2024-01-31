@@ -13,7 +13,7 @@ import {
 
 import { useQuery } from "react-query";
 import { Heading } from "./heading";
-import { TableItem } from "@/app/(dashboard)/dashboard/properties/page";
+
 import Link from "next/link";
 import { Separator } from "./ui/separator";
 import { Plus } from "lucide-react";
@@ -51,7 +51,7 @@ export function Tenants() {
             setContent(<AddListing />);
           }}
           className={buttonVariants({ variant: "default" })}
-        >
+        >`
           <Plus className="mr-2 h-4 w-4" /> Add New
         </Button> */}
       </div>

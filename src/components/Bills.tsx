@@ -13,8 +13,7 @@ import {
 
 import { useQuery } from "react-query";
 import { Heading } from "./heading";
-import { TableItem } from "@/app/(dashboard)/dashboard/properties/page";
-import Link from "next/link";
+
 import { Separator } from "./ui/separator";
 import { Plus } from "lucide-react";
 import { Button, buttonVariants } from "./ui/button";

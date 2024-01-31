@@ -12,13 +12,13 @@ import {
 
 import { useQuery } from "react-query";
 import { Heading } from "./heading";
-import { TableItem } from "@/app/(dashboard)/dashboard/properties/page";
-import Link from "next/link";
+
 import { Separator } from "./ui/separator";
 import { Plus } from "lucide-react";
 import { Button, buttonVariants } from "./ui/button";
 import { useModal } from "@/hooks/useModal";
 import AddListing from "@/components/AddListingForm";
+import { TableItem } from "./TableItem";
 
 export function RecentListings() {
   const { session } = useSession();

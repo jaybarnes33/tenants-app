@@ -14,7 +14,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import useSession from "@/hooks/useUser";
 
-export default function page() {
+export default function Page() {
   const { session } = useSession();
   return (
     <ScrollArea className="h-full">

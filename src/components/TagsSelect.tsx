@@ -11,6 +11,8 @@ const unitTypes = [
   { value: "duplex", label: "Duplex" },
 ];
 
-export default ({ multi }: { multi?: boolean }) => (
+const Component = ({ multi }: { multi?: boolean }) => (
   <Select closeMenuOnSelect={false} isMulti={multi} options={unitTypes} />
 );
+
+export default Component;
