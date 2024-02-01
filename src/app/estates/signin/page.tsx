@@ -43,6 +43,11 @@ const Page = ({
       router.push(`/dashboard?estate=${searchParams.estate}`);
     } catch (error) {
       console.log(error);
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: "Please check your URL",
+      });
     }
   }
 
@@ -90,7 +95,7 @@ const Page = ({
           </CardContent>
           <CardFooter>
             <Button className="w-full" type="submit">
-              Create account
+              Sign In
             </Button>
           </CardFooter>
         </Card>

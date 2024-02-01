@@ -1,15 +1,8 @@
 "use client";
-import { CalendarDateRangePicker } from "@/components/date-range-picker";
+
 import { RecentListings } from "@/components/listings";
 
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import useSession from "@/hooks/useUser";
@@ -23,10 +16,6 @@ export default function Page() {
           <h2 className="text-3xl font-bold tracking-tight">
             Hi {session?.user.name.split(" ")[0]}, Welcome back 👋
           </h2>
-          <div className="hidden md:flex items-center space-x-2">
-            <CalendarDateRangePicker />
-            <Button>Download</Button>
-          </div>
         </div>
         <Tabs defaultValue="overview" className="space-y-4">
           <TabsList>

@@ -1,10 +1,63 @@
 "use client";
-import { Button } from "react-day-picker";
+
+import { useMutation, useQueryClient } from "react-query";
+import { Button } from "./ui/button";
 import { TableCell, TableRow } from "./ui/table";
 import { useState } from "react";
+import { makeSecuredRequest } from "@/lib/makeSecuredRequest";
 
 export const TableItem = ({ listing }: { listing: Record<string, any> }) => {
   const [loading, setLoading] = useState(false);
+  const client = useQueryClient();
+  // Use useMutation to handle the POST request
+
+  //   const addPayment = async () => {
+  //     try {
+
+  //       const { data } = await makeSecuredRequest(
+  //         //@ts-ignore
+  //         `${process.env.NEXT_PUBLIC_API}/api/payments`,
+  //         "post",
+  //         { listing: listing._id,
+  //          }
+  //       );
+  //       console.log(data);
+  //       toast({
+  //         variant: "default",
+  //         title: "Success",
+  //         description: "Payment Request Sent",
+  //       });
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
+  //   const mutation = useMutation({
+  //     mutationFn: addBill,
+  //     onSuccess: () => {
+  //       client.invalidateQueries(["payments"]);
+  //     },
+  //   });
+  //   async function adminSubmit(e: FormEvent<HTMLFormElement>) {
+  //     e.preventDefault();
+  //     try {
+  //       setLoading(true);
+  //       mutation.mutate();
+
+  //       toggle();
+  //     } catch (error) {
+  //       console.log(error);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   }
+
+  //   const handleChange = (
+  //     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  //   ) => {
+  //     const { name, value } = e.target;
+
+  //     setFormData((prev) => ({ ...prev, [name]: value }));
+  //   };
 
   return (
     <TableRow key={listing.name}>

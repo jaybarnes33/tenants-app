@@ -63,10 +63,11 @@ export function Payments() {
             <TableCaption>All Payment Request</TableCaption>
             <TableHeader>
               <TableRow>
-                <TableHead className="w-[100px]">Name</TableHead>
+                <TableHead>Date</TableHead>
+                <TableHead>Name</TableHead>
                 <TableHead>Description</TableHead>
                 <TableHead>Property</TableHead>
-
+                <TableHead>Occupant</TableHead>
                 <TableHead>Amount</TableHead>
                 <TableHead>Status</TableHead>
               </TableRow>
@@ -74,9 +75,12 @@ export function Payments() {
             <TableBody>
               {data.map((payment: Record<string, any>) => (
                 <TableRow key={payment?._id}>
-                  <TableCell>{payment?.name}</TableCell>
-                  <TableCell>{payment?.description}</TableCell>
-                  <TableCell>GHS{payment?.amount}</TableCell>
+                  <TableCell>{payment?.createdAt.split("T")[0]}</TableCell>
+                  <TableCell>{payment?.bill?.name}</TableCell>
+                  <TableCell>{payment?.bill?.description}</TableCell>
+                  <TableCell>{payment?.listing?.name}</TableCell>
+                  <TableCell>{payment?.listing?.tenant?.name}</TableCell>
+                  <TableCell>GHS{payment?.bill?.amount}</TableCell>
                   <TableCell>{payment?.status}</TableCell>
                 </TableRow>
               ))}
