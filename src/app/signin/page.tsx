@@ -15,6 +15,7 @@ import axios from "axios";
 import { toast } from "@/components/ui/use-toast";
 import { useRouter } from "next/navigation";
 import { saveTokens } from "@/lib/utils";
+import Link from "next/link";
 
 const Page = ({
   searchParams,
@@ -30,7 +31,7 @@ const Page = ({
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        `${process.env.NEXT_PUBLIC_API}/api/auth?estate=${searchParams.estate}`,
+        `${process.env.NEXT_PUBLIC_API}/api/auth`,
         { ...formData }
       );
       console.log(data);
@@ -40,7 +41,7 @@ const Page = ({
         description: "Login Successful",
       });
       saveTokens(data);
-      router.push(`/dashboard?estate=${searchParams.estate}`);
+      router.push(`/dashboard`);
     } catch (error) {
       console.log(error);
       toast({
@@ -62,7 +63,7 @@ const Page = ({
       <form onSubmit={adminSubmit}>
         <Card className="border">
           <CardHeader className="space-y-1">
-            <CardTitle className="text-2xl">Admin Details</CardTitle>
+            <CardTitle className="text-2xl">Login</CardTitle>
             <CardDescription>
               Provide an email and password to continue to your dashboard
             </CardDescription>
@@ -92,6 +93,9 @@ const Page = ({
                 type="password"
               />
             </div>
+            <p className="small">
+              Don&apos;t have an account? <Link href={"/signup"}>Signup</Link>
+            </p>
           </CardContent>
           <CardFooter>
             <Button className="w-full" type="submit">

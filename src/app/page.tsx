@@ -8,10 +8,10 @@ export default function Home() {
       <div className="grid grid-cols-2 place-items-center">
         <div className="space-y-4">
           <h1 className="text-4xl  leading-[100%]">
-            A platform for everything estate management
+            All your bills at one place
           </h1>
 
-          <Link href={"/estates/create"}>
+          <Link href={"/signup"}>
             <Button className="mt-4">Get Started</Button>
           </Link>
         </div>
