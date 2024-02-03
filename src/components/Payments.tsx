@@ -54,7 +54,7 @@ const PaymentModal = ({ payment }: { payment: Record<string, any> }) => {
     currency: "GHS",
     phone: formData.number,
     amount: payment.bill.amount * 100, //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
-    publicKey: "pk_test_53f86ff10d049d4212aecd29598e3e30f2d6d4c5",
+    publicKey: process.env.NEXT_PUBLIC_PAYSTACK || "",
   };
   const initializePayment = usePaystackPayment(config);
   const makePayment = async (ref: PaymentResponse) => {
